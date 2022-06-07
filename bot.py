@@ -20,12 +20,23 @@ def create_char():
         time.sleep(1)
         click(1485,280)
         time.sleep(1)
-        write('babin')
+        write('Oaprendiz')
         time.sleep(1)
         click(1580,670)
         time.sleep(2)
         press('enter')
         time.sleep(8)
+    else:
+        time.sleep(1)
+        click(1485,280)
+        time.sleep(1)
+        write('Oaprendiz')
+        time.sleep(1)
+        click(1580,670)
+        time.sleep(2)
+        press('enter')
+        time.sleep(8)
+
 
 def close_window_daily():
     if locateOnScreen('close_window_daily.png') != None:
@@ -35,33 +46,35 @@ def close_window_daily():
         pass
 
 def kafra_initial():
-    posi_check = locateOnScreen('kafra_initial.png', confidence = 0.85)
+    #posi_check = locateOnScreen('kafra_initial.png', confidence = 0.85)
 
     #FIRTS DIALOGUE
-    if posi_check != None:
-        print('achou a primeira kafra')
-        sleep(2)
-        kafra_initial = center(posi_check)
-        click(kafra_initial.x, kafra_initial.y)
-    else:
-        print('NÃO achou')
-        print('Clicando na posição...')
-        click(1300,400)
+    #if posi_check != None:
+    #    print('achou a primeira kafra')
+    #    sleep(2)
+    #    kafra_initial = center(posi_check)
+    #    click(kafra_initial.x, kafra_initial.y)
+    #else:
+    #    print('NÃO achou')
+    print('Clicando na posição...')
+    time.sleep(2)
+    click(1290,430)
 
     for i in range(0, 12):
         press('enter')
         time.sleep(0.5)
 
     #SECOND DIALOGUE
-    if posi_check != None:
-        print('achou a primeira kafra e conversou novamente com ela')
-        sleep(2)
-        kafra_initial = center(posi_check)
-        click(kafra_initial.x, kafra_initial.y)
-    else:
-        print('NÃO achou')
-        print('Clicando na posição...')
-        click(1300,400)
+    #if posi_check != None:
+    #    print('achou a primeira kafra e conversou novamente com ela')
+    #    sleep(2)
+    #    kafra_initial = center(posi_check)
+    #    click(kafra_initial.x, kafra_initial.y)
+    #else:
+    #    print('NÃO achou')
+    print('Clicando na posição...')
+    time.sleep(2)
+    click(1290,430)
 
     for k in range(0, 4):
 
@@ -114,6 +127,10 @@ def third_npc():
     time.sleep(5)
 
     if locateOnScreen('instrutor_de_batalha.png') != None:
+        click(1440,220)
+        time.sleep(1)
+    
+    else:
         click(1440,220)
         time.sleep(1)
 
@@ -249,24 +266,28 @@ def novice_field():
         if posi_check != None:
             print('achou')
             func_checagem = center(posi_check)
-            time.sleep(1.5)
+            #time.sleep(1.5)
             click(func_checagem.x, func_checagem.y)
-            time.sleep(1)
+            #time.sleep(1)
 
             for k in range(0, 3):
                 press('enter')
-                time.sleep(0.5)
-                break
-        else:
-            if locateOnScreen('pilar.png', confidence=0.95) != None:
+                time.sleep(0.2)
+                print('terminou de falar')
                 break
         
+        elif locateOnScreen('pilar.png', confidence=0.95) != None:
+            print('achou o pilar')
+            break
+
+        else:
             print('Nao achou')
             click(1290,80)
-            time.sleep(0.2)
 
 def instrutor_de_aprendizes():
-    time.sleep(2)
+
+    time.sleep(5)
+
     click(905,300)
     time.sleep(2)
     click(1290,350)
@@ -314,12 +335,14 @@ def get_out():
 def skillpoint():
     time.sleep(2)
     keyDown('alt')
-    keyDown('s')
+    time.sleep(1)
+    press('s')
 
     for i in range(0, 6):
         moveTo(768,257)
         mouseDown(); mouseUp()  
 
+    keyUp('alt')
     time.sleep(1)
     click(1160,590)
     time.sleep(1)
@@ -344,7 +367,10 @@ def pass_itens():
 
     time.sleep(2)
     keyDown('alt')
-    keyDown('e')
+    time.sleep(1)
+    press('e')
+    time.sleep(1)
+    keyUp('alt')
 
     time.sleep(1)
     moveTo(1427,516)
@@ -369,6 +395,7 @@ def pass_itens():
     moveTo(1535,520)
     time.sleep(0.5)
     keyDown('alt')
+    time.sleep(1)
     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN,0,0)
     time.sleep(0.2)
     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP,0,0)
@@ -376,9 +403,8 @@ def pass_itens():
     keyUp('alt')
     time.sleep(1)
     keyDown('alt')
-    keyDown('e')
+    press('e')
     keyUp('alt')
-    keyUp('e')
 
     time.sleep(1)
     click(1311,942)
@@ -394,80 +420,81 @@ def deslogar():
             break
 
 def delete_character():
+    time.sleep(3)
 
-    if locateOnScreen('delete_character.png', confidence=0.95) != None:
-        click(1670,510)
+    #if locateOnScreen('delete_character.png', confidence=0.95) != None:
+    click(1670,510)
 
     time.sleep(2)
 
-    if locateOnScreen('delete_option.png', confidence=0.95) != None:
-        click(1670,535)
-        time.sleep(2)
-        click(1360,605)
+    #if locateOnScreen('delete_option.png', confidence=0.95) != None:
+    click(1670,535)
+    time.sleep(2)
+    click(1360,605)
 
-        keyDown('ctrl')
-        keyDown('v')
-        keyUp('ctrl')
-        keyUp('v')
+    keyDown('ctrl')
+    time.sleep(1)
+    press('v')
+    time.sleep(1)
+    keyUp('ctrl')
+    #press('enter')
+    click(1395,530)
+    
+        #time.sleep(1)
+        #keyUp('v')
 
-        # while True:
-        #     write('l')
-        #     time.sleep(0.3)
-        #     write('u')
-        #     time.sleep(0.3)
-        #     write('c')
-        #     time.sleep(0.3)
-        #     write('a')
-        #     time.sleep(0.3)
-        #     write('s')
-        #     time.sleep(0.3)
-        #     write('p')
-        #     time.sleep(0.3)
-        #     write('e')
-        #     time.sleep(0.3)
-        #     write('r')
-        #     time.sleep(0.3)
-        #     write('i')
-        #     time.sleep(0.3)
-        #     write('c')
-        #     time.sleep(0.3)
-        #     write('l')
-        #     time.sleep(0.3)
-        #     write('e')
-        #     time.sleep(0.3)
-        #     write('s')
-        #     time.sleep(0.3)
-        #     write('b')
-        #     time.sleep(0.3)
-        #     write('r')
-        #     time.sleep(0.3)
-        #     write('@')
-        #     time.sleep(0.3)
-        #     write('g')
-        #     time.sleep(0.3)
-        #     write('m')
-        #     time.sleep(0.3)
-        #     write('a')
-        #     time.sleep(0.3)
-        #     write('i')
-        #     time.sleep(0.3)
-        #     write('l')
-        #     time.sleep(0.3)
-        #     write('.')
-        #     time.sleep(0.3)
-        #     write('c')
-        #     time.sleep(0.3)
-        #     write('o')
-        #     time.sleep(0.3)
-        #     write('m')
-        #     time.sleep(0.3)
-        #     break
-        
-        time.sleep(1)
-        click(1404,528)
-
-
-
+# while True:
+#     write('l')
+#     time.sleep(0.3)
+#     write('u')
+#     time.sleep(0.3)
+#     write('c')
+#     time.sleep(0.3)
+#     write('a')
+#     time.sleep(0.3)
+#     write('s')
+#     time.sleep(0.3)
+#     write('p')
+#     time.sleep(0.3)
+#     write('e')
+#     time.sleep(0.3)
+#     write('r')
+#     time.sleep(0.3)
+#     write('i')
+#     time.sleep(0.3)
+#     write('c')
+#     time.sleep(0.3)
+#     write('l')
+#     time.sleep(0.3)
+#     write('e')
+#     time.sleep(0.3)
+#     write('s')
+#     time.sleep(0.3)
+#     write('b')
+#     time.sleep(0.3)
+#     write('r')
+#     time.sleep(0.3)
+#     write('@')
+#     time.sleep(0.3)
+#     write('g')
+#     time.sleep(0.3)
+#     write('m')
+#     time.sleep(0.3)
+#     write('a')
+#     time.sleep(0.3)
+#     write('i')
+#     time.sleep(0.3)
+#     write('l')
+#     time.sleep(0.3)
+#     write('.')
+#     time.sleep(0.3)
+#     write('c')
+#     time.sleep(0.3)
+#     write('o')
+#     time.sleep(0.3)
+#     write('m')
+#     time.sleep(0.3)
+#     break
 
 
 
@@ -539,4 +566,4 @@ while True:
     deslogar()
     time.sleep(2)
     delete_character()
-    time;sleep(3)
+    time;sleep(5)
