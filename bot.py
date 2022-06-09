@@ -6,13 +6,12 @@ import win32api, win32con
 
 #displayMousePosition()
 
-
 time.sleep(5)
 
 def click(x,y):
     win32api.SetCursorPos((x,y))
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
-    time.sleep(0.2)
+    time.sleep(0.5)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
 
 def create_char():
@@ -46,16 +45,6 @@ def close_window_daily():
         pass
 
 def kafra_initial():
-    #posi_check = locateOnScreen('kafra_initial.png', confidence = 0.85)
-
-    #FIRTS DIALOGUE
-    #if posi_check != None:
-    #    print('achou a primeira kafra')
-    #    sleep(2)
-    #    kafra_initial = center(posi_check)
-    #    click(kafra_initial.x, kafra_initial.y)
-    #else:
-    #    print('NÃO achou')
     print('Clicando na posição...')
     time.sleep(2)
     click(1290,430)
@@ -64,14 +53,6 @@ def kafra_initial():
         press('enter')
         time.sleep(0.5)
 
-    #SECOND DIALOGUE
-    #if posi_check != None:
-    #    print('achou a primeira kafra e conversou novamente com ela')
-    #    sleep(2)
-    #    kafra_initial = center(posi_check)
-    #    click(kafra_initial.x, kafra_initial.y)
-    #else:
-    #    print('NÃO achou')
     print('Clicando na posição...')
     time.sleep(2)
     click(1290,430)
@@ -91,21 +72,6 @@ def walking_to_the_castle():
     for i in range(0, 20):
         click(1289,217)
         time.sleep(0.5)
-
-    # while True:
-    #     posi_check = locateOnScreen('portal.png', confidence=0.7)
-
-    #     if posi_check != None:
-    #         print('achou o portal')
-    #         sleep(2)
-    #         portal = center(posi_check)
-    #         click(portal.x,portal.y + 50)
-    #         break
-
-    #     else:
-    #         print('Nao achou')
-    #         click(1289,217)
-    #         time.sleep(0.5)
 
 def second_npc():
     click(1105,100)
@@ -127,18 +93,18 @@ def third_npc():
     time.sleep(5)
 
     if locateOnScreen('instrutor_de_batalha.png') != None:
-        click(1440,220)
+        click(1435,235)
         time.sleep(1)
     
     else:
-        click(1440,220)
+        click(1435,235)
         time.sleep(1)
 
     for i in range(0, 12):
         press('enter')
         time.sleep(0.5)
 
-    click(1440,220)
+    click(1435,235)
 
     for k in range(0, 3):
         press('enter')
@@ -213,37 +179,7 @@ def seventh_npc():
 
     for i in range(0, 6):
         press('enter')
-        time.sleep(0.5)
-
-# def walking_novice_field():
-
-#     for i in range(0, 2):
-#         click(1515,70)
-#         time.sleep(2)
-
-#     while True:
-#         walking_check = locateOnScreen('andar_aqui.png', confidence=0.8)
-#         stop_walking = locateOnScreen('achar_e_parar.png', confidence=0.9)
-
-#         if stop_walking != None:
-#             print('achou o muro e parou')
-#             achar_e_parar = center(walking_check)
-#             time.sleep(1.5)
-#             click(achar_e_parar.x, achar_e_parar.y + 150)
-#             time.sleep(1)
-
-#         if walking_check != None:
-#             print('achou a parede do npc e vai falar com ele')
-#             andar_aqui = center(walking_check)
-#             time.sleep(1.5)
-#             click(andar_aqui.x, andar_aqui.y + 150)
-#             time.sleep(1)
-#             break
-
-#         else:
-#             print('nao achou')
-#             click(1290,80)
-#             time.sleep(0.5)
+        time.sleep(0.5)  
 
 def novice_field():
 
@@ -437,90 +373,8 @@ def delete_character():
     press('v')
     time.sleep(1)
     keyUp('ctrl')
-    #press('enter')
     click(1395,530)
     
-        #time.sleep(1)
-        #keyUp('v')
-
-# while True:
-#     write('l')
-#     time.sleep(0.3)
-#     write('u')
-#     time.sleep(0.3)
-#     write('c')
-#     time.sleep(0.3)
-#     write('a')
-#     time.sleep(0.3)
-#     write('s')
-#     time.sleep(0.3)
-#     write('p')
-#     time.sleep(0.3)
-#     write('e')
-#     time.sleep(0.3)
-#     write('r')
-#     time.sleep(0.3)
-#     write('i')
-#     time.sleep(0.3)
-#     write('c')
-#     time.sleep(0.3)
-#     write('l')
-#     time.sleep(0.3)
-#     write('e')
-#     time.sleep(0.3)
-#     write('s')
-#     time.sleep(0.3)
-#     write('b')
-#     time.sleep(0.3)
-#     write('r')
-#     time.sleep(0.3)
-#     write('@')
-#     time.sleep(0.3)
-#     write('g')
-#     time.sleep(0.3)
-#     write('m')
-#     time.sleep(0.3)
-#     write('a')
-#     time.sleep(0.3)
-#     write('i')
-#     time.sleep(0.3)
-#     write('l')
-#     time.sleep(0.3)
-#     write('.')
-#     time.sleep(0.3)
-#     write('c')
-#     time.sleep(0.3)
-#     write('o')
-#     time.sleep(0.3)
-#     write('m')
-#     time.sleep(0.3)
-#     break
-
-
-
-
-    # time.sleep(2)
-    # hotkey('alt', 'e')
-    # moveTo(1503,520)
-    # keyDown('alt')
-
-    # for i in range(0, 6):
-    #     click(button='right')
-    #     time.sleep(0.5)
-    # keyUp('alt')
-
-    # time.sleep(1)
-    # click(1425,560)
-
-    # time.sleep(1)
-    # moveTo(1535,520)
-    # time.sleep(0.5)
-    # keyDown('alt')
-    # click(button='right')
-    # keyUp('alt')
-
-
-
 
             
 while True:
@@ -547,8 +401,6 @@ while True:
     time.sleep(2)
     seventh_npc()
     time.sleep(2)
-    # walking_novice_field()
-    # time.sleep(2)
     novice_field()
     time.sleep(2)
     instrutor_de_aprendizes()
