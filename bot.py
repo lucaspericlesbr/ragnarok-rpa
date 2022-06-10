@@ -45,22 +45,39 @@ def close_window_daily():
         pass
 
 def kafra_initial():
-    print('Clicando na posição...')
-    time.sleep(2)
-    click(1290,430)
+    # FIRST DIALOGUE
+    cords = locateCenterOnScreen('kafra_initial.png', confidence=0.80) 
 
+    while keyboard.is_pressed('q') == False:
+
+        if cords != None:
+            print('ACHOU A PRIMEIRA KAFRA PARA INICIAR O PRIMEIRO DIALOGO')
+            moveTo(cords)
+            click(cords.x, cords.y)
+            break
+        
+        else:
+            print('NÃO ACHOU A PRIMEIRA KAFRA')
+    
     for i in range(0, 12):
         press('enter')
         time.sleep(0.5)
 
-    print('Clicando na posição...')
-    time.sleep(2)
-    click(1290,430)
+    # SECOND DIALOGUE
+    while keyboard.is_pressed('q') == False:
 
-    for k in range(0, 4):
+        if cords != None:
+            print('ACHOU A PRIMEIRA KAFRA PARA INICIAR O SEGUNDO DIALOGO')
+            moveTo(cords)
+            click(cords.x, cords.y)
+            break
 
-        time.sleep(0.5)
+        else:
+            print('NÃO ACHOU A PRIMEIRA KAFRA NOVAMENTE')
+
+    for K in range(0, 4):
         press('enter')
+        time.sleep(0.5)
 
 def rotate_screen():
     moveTo(1500,400)
@@ -377,45 +394,45 @@ def delete_character():
     
 
             
-while True:
-    create_char()
-    time.sleep(2)
-    close_window_daily()
-    time.sleep(2)
-    kafra_initial()
-    time.sleep(2)
-    rotate_screen()
-    walking_to_the_castle()
-    time.sleep(2)
-    second_npc()
-    time.sleep(2)
-    third_npc()
-    time.sleep(2)
-    fourth_npc()
-    time.sleep(2)
-    walking_fifth_npc()
-    time.sleep(2)
-    fifth_npc()
-    time.sleep(2)
-    sixth_npc()
-    time.sleep(2)
-    seventh_npc()
-    time.sleep(2)
-    novice_field()
-    time.sleep(2)
-    instrutor_de_aprendizes()
-    time.sleep(2)
-    instrutor_final()
-    time.sleep(2)
-    get_out()
-    time.sleep(2)
-    skillpoint()
-    time.sleep(2)
-    last_kafra()
-    time.sleep(2)
-    pass_itens()
-    time.sleep(2)
-    deslogar()
-    time.sleep(2)
-    delete_character()
-    time;sleep(5)
+# while True:
+#     create_char()
+#     time.sleep(2)
+#     close_window_daily()
+#     time.sleep(2)
+kafra_initial()
+#     time.sleep(2)
+#     rotate_screen()
+#     walking_to_the_castle()
+#     time.sleep(2)
+#     second_npc()
+#     time.sleep(2)
+#     third_npc()
+#     time.sleep(2)
+#     fourth_npc()
+#     time.sleep(2)
+#     walking_fifth_npc()
+#     time.sleep(2)
+#     fifth_npc()
+#     time.sleep(2)
+#     sixth_npc()
+#     time.sleep(2)
+#     seventh_npc()
+#     time.sleep(2)
+#     novice_field()
+#     time.sleep(2)
+#     instrutor_de_aprendizes()
+#     time.sleep(2)
+#     instrutor_final()
+#     time.sleep(2)
+#     get_out()
+#     time.sleep(2)
+#     skillpoint()
+#     time.sleep(2)
+#     last_kafra()
+#     time.sleep(2)
+#     pass_itens()
+#     time.sleep(2)
+#     deslogar()
+#     time.sleep(2)
+#     delete_character()
+#     time;sleep(5)
