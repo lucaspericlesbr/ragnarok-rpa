@@ -38,17 +38,21 @@ def create_char():
 
 
 def close_window_daily():
-    if locateOnScreen('close_window_daily.png') != None:
-        click(1290,740)
+
+    coords = locateCenterOnScreen('close_window_daily.png') 
+
+    if coords != None:
+        moveTo(coords)
+        click(coords.x, coords.y)
+
     else:
-        time.sleep(2)
-        pass
+        print('BOTÃO FECHAR NÃO APARECEU NA TELA')
 
 def kafra_initial():
     # FIRST DIALOGUE
-    cords = locateCenterOnScreen('kafra_initial.png', confidence=0.80) 
-
+    
     while keyboard.is_pressed('q') == False:
+        cords = locateCenterOnScreen('kafra_initial.png', confidence=0.75)
 
         if cords != None:
             print('ACHOU A PRIMEIRA KAFRA PARA INICIAR O PRIMEIRO DIALOGO')
@@ -58,6 +62,8 @@ def kafra_initial():
         
         else:
             print('NÃO ACHOU A PRIMEIRA KAFRA')
+            
+
     
     for i in range(0, 12):
         press('enter')
@@ -65,6 +71,7 @@ def kafra_initial():
 
     # SECOND DIALOGUE
     while keyboard.is_pressed('q') == False:
+        cords = locateCenterOnScreen('kafra_initial.png', confidence=0.75)
 
         if cords != None:
             print('ACHOU A PRIMEIRA KAFRA PARA INICIAR O SEGUNDO DIALOGO')
@@ -74,6 +81,7 @@ def kafra_initial():
 
         else:
             print('NÃO ACHOU A PRIMEIRA KAFRA NOVAMENTE')
+
 
     for K in range(0, 4):
         press('enter')
@@ -398,8 +406,7 @@ def delete_character():
 #     create_char()
 #     time.sleep(2)
 #     close_window_daily()
-#     time.sleep(2)
-kafra_initial()
+#     kafra_initial()
 #     time.sleep(2)
 #     rotate_screen()
 #     walking_to_the_castle()
