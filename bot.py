@@ -50,7 +50,6 @@ def close_window_daily():
 
 def kafra_initial():
     # FIRST DIALOGUE
-    
     while keyboard.is_pressed('q') == False:
         cords = locateCenterOnScreen('kafra_initial.png', confidence=0.75)
 
@@ -63,8 +62,6 @@ def kafra_initial():
         else:
             print('NÃO ACHOU A PRIMEIRA KAFRA')
             
-
-    
     for i in range(0, 12):
         press('enter')
         time.sleep(0.5)
@@ -82,15 +79,24 @@ def kafra_initial():
         else:
             print('NÃO ACHOU A PRIMEIRA KAFRA NOVAMENTE')
 
-
     for K in range(0, 4):
         press('enter')
         time.sleep(0.5)
 
 def rotate_screen():
-    moveTo(1500,400)
-    drag(92, 0, 2, button='right')
-    time.sleep(2)
+
+    while keyboard.is_pressed('q') == False:
+        coords = locateCenterOnScreen('mushroom.png', confidence=0.85)
+
+        if coords != None:
+            print('ACHOU O "COGUMELO" PONTO DE REFERENCIA')
+            moveTo(coords.x-400, coords.y+250)
+            drag(92, 0, 2, button='right')
+            time.sleep(2)
+            break
+
+        else:
+            print('NÃO ACHOU O PONTO DE REFERENCIA')
 
 def walking_to_the_castle():
 
@@ -408,7 +414,7 @@ def delete_character():
 #     close_window_daily()
 #     kafra_initial()
 #     time.sleep(2)
-#     rotate_screen()
+rotate_screen()
 #     walking_to_the_castle()
 #     time.sleep(2)
 #     second_npc()
