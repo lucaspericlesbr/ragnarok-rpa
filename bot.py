@@ -38,17 +38,20 @@ def create_char():
 
 
 def close_window_daily():
-    if locateOnScreen('close_window_daily.png') != None:
-        click(1290,740)
+
+    coords = locateCenterOnScreen('close_window_daily.png') 
+
+    if coords != None:
+        moveTo(coords)
+        click(coords.x, coords.y)
+
     else:
-        time.sleep(2)
-        pass
+        print('BOTÃO FECHAR NÃO APARECEU NA TELA')
 
 def kafra_initial():
     # FIRST DIALOGUE
-    cords = locateCenterOnScreen('kafra_initial.png', confidence=0.80) 
-
     while keyboard.is_pressed('q') == False:
+        cords = locateCenterOnScreen('kafra_initial.png', confidence=0.75)
 
         if cords != None:
             print('ACHOU A PRIMEIRA KAFRA PARA INICIAR O PRIMEIRO DIALOGO')
@@ -58,13 +61,14 @@ def kafra_initial():
         
         else:
             print('NÃO ACHOU A PRIMEIRA KAFRA')
-    
+            
     for i in range(0, 12):
         press('enter')
         time.sleep(0.5)
 
     # SECOND DIALOGUE
     while keyboard.is_pressed('q') == False:
+        cords = locateCenterOnScreen('kafra_initial.png', confidence=0.75)
 
         if cords != None:
             print('ACHOU A PRIMEIRA KAFRA PARA INICIAR O SEGUNDO DIALOGO')
@@ -80,9 +84,19 @@ def kafra_initial():
         time.sleep(0.5)
 
 def rotate_screen():
-    moveTo(1500,400)
-    drag(92, 0, 2, button='right')
-    time.sleep(2)
+
+    while keyboard.is_pressed('q') == False:
+        coords = locateCenterOnScreen('mushroom.png', confidence=0.85)
+
+        if coords != None:
+            print('ACHOU O "COGUMELO" PONTO DE REFERENCIA')
+            moveTo(coords.x-400, coords.y+250)
+            drag(92, 0, 2, button='right')
+            time.sleep(2)
+            break
+
+        else:
+            print('NÃO ACHOU O PONTO DE REFERENCIA')
 
 def walking_to_the_castle():
 
@@ -398,10 +412,9 @@ def delete_character():
 #     create_char()
 #     time.sleep(2)
 #     close_window_daily()
+#     kafra_initial()
 #     time.sleep(2)
-kafra_initial()
-#     time.sleep(2)
-#     rotate_screen()
+rotate_screen()
 #     walking_to_the_castle()
 #     time.sleep(2)
 #     second_npc()
