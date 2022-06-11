@@ -99,10 +99,19 @@ def rotate_screen():
             print('NÃO ACHOU O PONTO DE REFERENCIA')
 
 def walking_to_the_castle():
+    coords = locateCenterOnScreen('board_state.png', confidence=0.85)
 
-    for i in range(0, 20):
-        click(1289,217)
-        time.sleep(0.5)
+    while keyboard.is_pressed('q') == False:
+        landmark = locateCenterOnScreen('landmark_recepcionista.png', confidence=0.80)
+
+        if landmark != None:
+            print('ACHOU O PONTO DE PARADA E PAROU')
+            break
+        
+        else:
+            print('ANDANDO ATÉ ENCONTRAR PONTO DE PARADA')
+            moveTo(coords.x+150, coords.y)
+            click(coords.x+150, coords.y)
 
 def second_npc():
     click(1105,100)
@@ -415,7 +424,7 @@ def delete_character():
 #     kafra_initial()
 #     time.sleep(2)
 rotate_screen()
-#     walking_to_the_castle()
+walking_to_the_castle()
 #     time.sleep(2)
 #     second_npc()
 #     time.sleep(2)
