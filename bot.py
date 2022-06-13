@@ -13,26 +13,33 @@ def click(x,y):
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
 
 def create_char():
-    if locateOnScreen('empty_field.png') != None:
-        time.sleep(1)
-        click(1485,280)
-        time.sleep(1)
-        write('Oaprendiz')
-        time.sleep(1)
-        click(1580,670)
-        time.sleep(2)
-        press('enter')
-        time.sleep(8)
-    else:
-        time.sleep(1)
-        click(1485,280)
-        time.sleep(1)
-        write('Oaprendiz')
-        time.sleep(1)
-        click(1580,670)
-        time.sleep(2)
-        press('enter')
-        time.sleep(8)
+
+    while keyboard.is_pressed('q') == False:
+
+        coords = locateCenterOnScreen('empty_field.png')
+        text_box = locateCenterOnScreen('name_field.png', confidence=0.80)
+        create_char = locateCenterOnScreen('create.png')    
+
+        if coords != None:
+            moveTo(coords)
+            click(coords.x, coords.y)
+            time.sleep(1)
+        
+        elif text_box != None:
+            write('The Novice')
+            time.sleep(1)
+
+        elif create_char != None:
+            moveTo(create_char)
+            click(create_char.x, create_char.y)
+            time.sleep(1)
+            press('enter')
+            break
+
+        else:
+            continue
+
+  
 
 
 # def close_window_daily():
