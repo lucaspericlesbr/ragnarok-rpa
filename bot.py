@@ -39,19 +39,14 @@ def create_char():
         else:
             continue
 
-  
+def close_daily_reward():
 
+    time.sleep(3)
+    coords = locateCenterOnScreen('close_daily_reward.png') 
 
-# def close_window_daily():
-
-#     coords = locateCenterOnScreen('close_window_daily.png') 
-
-#     if coords != None:
-#         moveTo(coords)
-#         click(coords.x, coords.y)
-
-#     else:
-#         print('BOTÃO FECHAR NÃO APARECEU NA TELA')
+    if coords != None:
+        moveTo(coords)
+        click(coords.x, coords.y)
 
 # def kafra_initial():
 #     # FIRST DIALOGUE
