@@ -80,20 +80,18 @@ def initial_kafra():
         press('enter')
         time.sleep(0.5)
 
-# def rotate_screen():
+def rotate_screen():
 
-#     while keyboard.is_pressed('q') == False:
-#         coords = locateCenterOnScreen('mushroom.png', confidence=0.85)
+    while keyboard.is_pressed('q') == False:
+        coords = locateCenterOnScreen('mushroom_landmark.png', confidence=0.85)
 
-#         if coords != None:
-#             print('ACHOU O "COGUMELO" PONTO DE REFERENCIA')
-#             moveTo(coords.x-400, coords.y+250)
-#             drag(92, 0, 2, button='right')
-#             time.sleep(2)
-#             break
+        if coords != None:
+            moveTo(coords.x-400, coords.y+250)
+            drag(92, 0, 2, button='right')
+            break
 
-#         else:
-#             print('NÃO ACHOU O PONTO DE REFERENCIA')
+        else:
+            continue
 
 # def walking_to_the_castle():
 #     coords = locateCenterOnScreen('board_state.png', confidence=0.85)
