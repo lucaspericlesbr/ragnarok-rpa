@@ -48,40 +48,37 @@ def close_daily_reward():
         moveTo(coords)
         click(coords.x, coords.y)
 
-# def kafra_initial():
-#     # FIRST DIALOGUE
-#     while keyboard.is_pressed('q') == False:
-#         cords = locateCenterOnScreen('kafra_initial.png', confidence=0.75)
+def initial_kafra():
 
-#         if cords != None:
-#             print('ACHOU A PRIMEIRA KAFRA PARA INICIAR O PRIMEIRO DIALOGO')
-#             moveTo(cords)
-#             click(cords.x, cords.y)
-#             break
+    while keyboard.is_pressed('q') == False:
+        coords = locateCenterOnScreen('initial_kafra.png', confidence=0.65)
+
+        if coords != None:
+            moveTo(coords)
+            click(coords.x, coords.y)
+            break
         
-#         else:
-#             print('NÃO ACHOU A PRIMEIRA KAFRA')
+        else:
+            continue
             
-#     for i in range(0, 12):
-#         press('enter')
-#         time.sleep(0.5)
+    for i in range(0, 12):
+        press('enter')
+        time.sleep(0.5)
 
-#     # SECOND DIALOGUE
-#     while keyboard.is_pressed('q') == False:
-#         cords = locateCenterOnScreen('kafra_initial.png', confidence=0.75)
+    while keyboard.is_pressed('q') == False:
+        coords = locateCenterOnScreen('initial_kafra.png', confidence=0.65)
 
-#         if cords != None:
-#             print('ACHOU A PRIMEIRA KAFRA PARA INICIAR O SEGUNDO DIALOGO')
-#             moveTo(cords)
-#             click(cords.x, cords.y)
-#             break
+        if coords != None:
+            moveTo(coords)
+            click(coords.x, coords.y)
+            break
 
-#         else:
-#             print('NÃO ACHOU A PRIMEIRA KAFRA NOVAMENTE')
+        else:
+            continue
 
-#     for K in range(0, 4):
-#         press('enter')
-#         time.sleep(0.5)
+    for K in range(0, 4):
+        press('enter')
+        time.sleep(0.5)
 
 # def rotate_screen():
 
