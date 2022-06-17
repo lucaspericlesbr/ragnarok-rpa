@@ -93,20 +93,20 @@ def rotate_screen():
         else:
             continue
 
-# def walking_to_the_castle():
-#     coords = locateCenterOnScreen('board_state.png', confidence=0.85)
+def walking_to_the_castle():
+    
+    coords = locateCenterOnScreen('weight_landmark.png', confidence=0.85)
 
-#     while keyboard.is_pressed('q') == False:
-#         landmark = locateCenterOnScreen('landmark_recepcionista.png', confidence=0.80)
+    while keyboard.is_pressed('q') == False:
+        landmark = locateCenterOnScreen('recepcionist_landmark.png', confidence=0.80)    
 
-#         if landmark != None:
-#             print('ACHOU O PONTO DE PARADA E PAROU')
-#             break
+        if landmark != None:
+            break
         
-#         else:
-#             print('ANDANDO ATÉ ENCONTRAR PONTO DE PARADA')
-#             moveTo(coords.x+150, coords.y)
-#             click(coords.x+150, coords.y)
+        else:
+            moveTo(coords.x+850, coords.y-50)
+            click(coords.x+850, coords.y-50)
+    time.sleep(2)
 
 # def second_npc():
 #     click(1105,100)
