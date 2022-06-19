@@ -29,7 +29,7 @@
         <li><a href="Usage">Usage</a></li>
       </ul>
     </li>
-    <li><a href="📜 License">License</a></li>
+    <!--<li><a href="📜 License">License</a></li>-->
     <li><a href="📝 Author">Author</a></li>
     <li><a href="☎️ Contact">Contact</a></li>
     <li><a href="📚 Acknowledgments">Acknowledgments</a></li>
@@ -185,12 +185,15 @@ To install `<script>`, follow these steps:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- License -->
+
+<!-- 
+License
 ## 📜 License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+-->
 
 <!-- Authors -->
 ## 📝 Author
