@@ -108,18 +108,22 @@ def walking_to_the_castle():
             click(coords.x+850, coords.y-50)
     time.sleep(2)
 
-# def second_npc():
-#     click(1105,100)
-#     time.sleep(4)
+def second_npc():
 
-#     if locateOnScreen('recepcionista.png') != None:
-#         click(1490,200)
-#     else:
-#         click(1490,200)
+    while keyboard.is_pressed('q') == False:
+        recepcionist = locateCenterOnScreen('recepcionist_landmark.png', confidence=0.70)
 
-#     for i in range(0, 6):
-#         press('enter')
-#         time.sleep(0.5)
+        if recepcionist != None:
+            moveTo(recepcionist)
+            click(recepcionist.x, recepcionist.y)
+            break
+
+        else:
+            continue
+
+    for i in range(0, 6):
+        press('enter')
+        time.sleep(0.5)
 
 # def third_npc():
 #     click(1068,72)
