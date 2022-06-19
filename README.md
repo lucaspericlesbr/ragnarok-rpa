@@ -207,7 +207,7 @@ Special thanks to [NityanandaBarbosa](https://github.com/NityanandaBarbosa) for 
 <!-- Contact -->
 ## ☎️ Contact
 
-Discord - [@babfio](babfio#4289)
+Discord - [@babfio#4289](@babfio#4289)
 
 Project Link: [ragnarok-rpa](https://github.com/lucaspericlesbr/ragnarok-rpa)
 
