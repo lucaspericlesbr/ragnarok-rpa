@@ -133,7 +133,7 @@ def third_npc():
     click(landmark.x+380, landmark.y-290)
 
     while keyboard.is_pressed('q') == False:
-        instrutor = locateCenterOnScreen('instrutor_de_batalha.png', confidence=0.60)
+        instrutor = locateCenterOnScreen('battle_instructor.png', confidence=0.60)
 
         if instrutor != None:
             break
@@ -144,7 +144,7 @@ def third_npc():
     time.sleep(2)
 
     while keyboard.is_pressed('q') == False:
-        instrutor = locateCenterOnScreen('instrutor_de_batalha.png', confidence=0.70)
+        instrutor = locateCenterOnScreen('battle_instructor.png', confidence=0.70)
 
         if instrutor != None:
             moveTo(instrutor)
@@ -164,7 +164,7 @@ def third_npc():
     for k in range(0, 3):
         press('enter')
         time.sleep(0.5)
-        
+
 # def fourth_npc():
 #     if locateOnScreen('instrutor_de_habilidade.png') != None:
 #         click(1245,350)
