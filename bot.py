@@ -125,29 +125,45 @@ def second_npc():
         press('enter')
         time.sleep(0.5)
 
-# def third_npc():
-#     click(1068,72)
-#     time.sleep(3)
-#     click(1330,100)
-#     time.sleep(5)
+def third_npc():
+    time.sleep(2)
 
-#     if locateOnScreen('instrutor_de_batalha.png') != None:
-#         click(1435,235)
-#         time.sleep(1)
+    landmark = locateCenterOnScreen('second_room_landmark.png', confidence=0.85)
+    moveTo(landmark.x+380, landmark.y-290)
+    click(landmark.x+380, landmark.y-290)
+
+    while keyboard.is_pressed('q') == False:
+        instrutor = locateCenterOnScreen('battle_instructor.png', confidence=0.60)
+
+        if instrutor != None:
+            break
+            
+        else:
+            moveTo(landmark.x+335, landmark.y-290)
+            click(landmark.x+335, landmark.y-290)
+    time.sleep(2)
+
+    while keyboard.is_pressed('q') == False:
+        instrutor = locateCenterOnScreen('battle_instructor.png', confidence=0.70)
+
+        if instrutor != None:
+            moveTo(instrutor)
+            click(instrutor.x, instrutor.y)
+            break
+
+        else:
+            continue
     
-#     else:
-#         click(1435,235)
-#         time.sleep(1)
+    for i in range(0, 12):
+        press('enter')
+        time.sleep(0.5)
 
-#     for i in range(0, 12):
-#         press('enter')
-#         time.sleep(0.5)
+    moveTo(instrutor)
+    click(instrutor.x, instrutor.y)
 
-#     click(1435,235)
-
-#     for k in range(0, 3):
-#         press('enter')
-#         time.sleep(0.5)
+    for k in range(0, 3):
+        press('enter')
+        time.sleep(0.5)
 
 # def fourth_npc():
 #     if locateOnScreen('instrutor_de_habilidade.png') != None:
