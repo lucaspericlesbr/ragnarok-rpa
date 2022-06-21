@@ -89,7 +89,7 @@ The following tools were used in building the project:
 - [ ] Castle First Room
   - [x] Find Second NPC
   - [x] Second NPC Dialogue
-  - [ ] Third NPC Dialogue
+  - [x] Third NPC Dialogue
   - [ ] Fourth NPC Dialogue
   - [ ] Find Reference NPC to Teleport
   - [ ] Fifth NPC Dialogue
