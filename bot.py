@@ -165,18 +165,22 @@ def third_npc():
         press('enter')
         time.sleep(0.5)
 
-# def fourth_npc():
-#     if locateOnScreen('instrutor_de_habilidade.png') != None:
-#         click(1245,350)
-#         time.sleep(1)
-#     else:
-#         click(1245,350)
-#         time.sleep(1)
-        
+def fourth_npc():
 
-#     for i in range(0, 16):
-#         press('enter')
-#         time.sleep(0.5)
+    while keyboard.is_pressed('q') == False:
+        instrutor = locateCenterOnScreen('skill_instructor.png', confidence=0.70)
+
+        if instrutor != None:
+            moveTo(instrutor)
+            click(instrutor.x, instrutor.y)
+            break
+
+        else:
+            continue
+
+    for i in range(0, 16):
+        press('enter')
+        time.sleep(0.5)
 
 # def walking_fifth_npc():
 #     time.sleep(1)
