@@ -86,13 +86,13 @@ The following tools were used in building the project:
 - [x] Close Daily Rewards
 - [x] Initial NPC Dialogue
 - [x] Rotate Screen
-- [ ] Castle First Room
+- [x] Castle First Room
   - [x] Find Second NPC
   - [x] Second NPC Dialogue
   - [x] Third NPC Dialogue
   - [x] Fourth NPC Dialogue
-  - [ ] Find Reference NPC to Teleport
-  - [ ] Fifth NPC Dialogue
+  - [x] Find Reference NPC to Teleport
+  - [x] Fifth NPC Dialogue
 - [ ] Castle Second Room 
   - [ ] Sixth NPC Dialogue
   - [ ] Seventh NPC Dialogue
