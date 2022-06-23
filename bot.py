@@ -182,31 +182,34 @@ def fourth_npc():
         press('enter')
         time.sleep(0.5)
 
-# def walking_fifth_npc():
-#     time.sleep(1)
-#     click(2100,560)
-#     time.sleep(3)
-#     click(2100,560)
-#     time.sleep(3)
+def fifth_npc():
 
-# def fifth_npc():
-#     if locateOnScreen('instrutora_de_itens.png') != None:
-#         click(1250,350)
-#         time.sleep(1)
-#     else:
-#         click(1245,350)
-#         time.sleep(1)
+    while keyboard.is_pressed('q') == False:
+        instrutor = locateCenterOnScreen('skill_instructor.png', confidence=0.70)
 
-#     for i in range(0, 15):
-#         press('enter')
-#         time.sleep(0.5)
+        if instrutor != None:
+            moveTo(instrutor.x+490, instrutor.y+50)
+            click(instrutor.x+490, instrutor.y+50)
+            break
 
-#     click(1245,350)
-#     time.sleep(1)
+        else:
+            continue
+    time.sleep(2)
 
-#     for k in range(0, 5):
-#         press('enter')
-#         time.sleep(0.5)
+    while keyboard.is_pressed('q') == False:
+        instrutor = locateCenterOnScreen('third_npc_landmark.png', confidence=0.70)
+
+        if instrutor != None:
+            moveTo(instrutor)
+            click(instrutor.x, instrutor.y)
+            break
+            
+        else:
+            continue
+    
+    for i in range(0, 3):
+        press('enter')
+        time.sleep(0.5)
 
 # def sixth_npc():
 #     if locateOnScreen('instrutor_de_batalha_02.png') != None:
