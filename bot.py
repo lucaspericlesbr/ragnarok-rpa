@@ -214,7 +214,7 @@ def fifth_npc():
 def sixth_npc():
 
     while keyboard.is_pressed('q') == False:
-        instrutora = locateCenterOnScreen('item instructor.png', confidence=0.70)
+        instrutora = locateCenterOnScreen('item_instructor.png', confidence=0.70)
 
         if instrutora != None:
             moveTo(instrutora)
