@@ -211,25 +211,29 @@ def fifth_npc():
         press('enter')
         time.sleep(0.5)
 
-# def sixth_npc():
-#     if locateOnScreen('instrutor_de_batalha_02.png') != None:
-#         click(750,360)
-#         time.sleep(1)
-#     else:
-#         click(750,360)
-#         time.sleep(1)
+def sixth_npc():
 
-#     for i in range(0, 13):
-#         press('enter')
-#         time.sleep(0.5)
+    while keyboard.is_pressed('q') == False:
+        instrutora = locateCenterOnScreen('item instructor.png', confidence=0.70)
 
-#     for k in range(0, 3):
-#         press('down')
-        
-#     press('enter')
-#     time.sleep(0.5)
-#     press('enter')
-#     time.sleep(0.5)
+        if instrutora != None:
+            moveTo(instrutora)
+            click(instrutora.x, instrutora.y)
+            break
+            
+        else:
+            continue
+    
+    for i in range(0, 15):
+        press('enter')
+        time.sleep(0.5)
+
+    moveTo(instrutora)
+    click(instrutora.x, instrutora.y)
+    
+    for k in range(0, 5):
+        press('enter')
+        time.sleep(0.5)
 
 # def seventh_npc():
 #     if locateOnScreen('ajudante.png') != None:
