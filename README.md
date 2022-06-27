@@ -93,9 +93,9 @@ The following tools were used in building the project:
   - [x] Fourth NPC Dialogue
   - [x] Find Reference NPC to Teleport
   - [x] Fifth NPC Dialogue
-- [ ] Castle Second Room 
+- [x] Castle Second Room 
   - [x] Sixth NPC Dialogue
-  - [ ] Seventh NPC Dialogue
+  - [x] Seventh NPC Dialogue
 - [ ] Novice Field
   - [ ] Eight NPC dialogue
 - [ ] Last Room
