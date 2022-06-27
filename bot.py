@@ -235,17 +235,29 @@ def sixth_npc():
         press('enter')
         time.sleep(0.5)
 
-# def seventh_npc():
-#     if locateOnScreen('ajudante.png') != None:
-#         click(1780,365)
-#         time.sleep(1)
-#     else:
-#         click(1780,365)
-#         time.sleep(1)
+def seventh_npc():
 
-#     for i in range(0, 6):
-#         press('enter')
-#         time.sleep(0.5)  
+    while keyboard.is_pressed('q') == False:
+        instrutor = locateCenterOnScreen('battle_instructor[2].png', confidence=0.70)
+
+        if instrutor != None:
+            moveTo(instrutor)
+            click(instrutor.x, instrutor.y)
+            break
+            
+        else:
+            continue
+
+    for i in range(0, 13):
+        press('enter')
+        time.sleep(0.5)
+    
+    for k in range(0, 3):
+        press('down')
+
+    for j in range(0, 2):
+        press('enter')
+        time.sleep(0.5)
 
 # def novice_field():
 
