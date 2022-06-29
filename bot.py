@@ -259,6 +259,23 @@ def seventh_npc():
         press('enter')
         time.sleep(0.5)
 
+def eighth_npc():
+
+    while keyboard.is_pressed('q') == False:
+        helper = locateCenterOnScreen('helper.png', confidence=0.70)
+
+        if helper != None:
+            moveTo(helper)
+            click(helper.x, helper.y)
+            break
+            
+        else:
+            continue
+        
+    for i in range(0, 6):
+        press('enter')
+        time.sleep(0.5)
+
 # def novice_field():
 
 #     for i in range(0, 2):
