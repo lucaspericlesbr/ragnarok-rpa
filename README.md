@@ -96,8 +96,8 @@ The following tools were used in building the project:
 - [x] Castle Second Room 
   - [x] Sixth NPC Dialogue
   - [x] Seventh NPC Dialogue
-- [ ] Novice Field
-  - [ ] Eight NPC dialogue
+- [x] Novice Field
+  - [x] Eight NPC dialogue
 - [ ] Last Room
   - [ ] Ninth NPC Dialogue
   - [ ] Tenth NPC Dialogue
