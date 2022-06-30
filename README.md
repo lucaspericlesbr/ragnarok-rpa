@@ -98,7 +98,7 @@ The following tools were used in building the project:
   - [x] Seventh NPC Dialogue
 - [x] Novice Field
   - [x] Eight NPC dialogue
-- [x] Last Room
+- [ ] Last Room
   - [ ] Ninth NPC Dialogue
   - [ ] Tenth NPC Dialogue
 - [ ] SkillTree
