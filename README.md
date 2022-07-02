@@ -99,7 +99,7 @@ The following tools were used in building the project:
 - [x] Novice Field
   - [x] Eight NPC dialogue
 - [ ] Last Room
-  - [ ] Ninth NPC Dialogue
+  - [x] Ninth NPC Dialogue
   - [ ] Tenth NPC Dialogue
 - [ ] SkillTree
 - [ ] Teleport to the Storage NPC
