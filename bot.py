@@ -276,44 +276,42 @@ def eighth_npc():
         press('enter')
         time.sleep(0.5)
 
-# def novice_field():
+def novice_field():
 
-#     for i in range(0, 2):
-#         click(1515,70)
-#         time.sleep(2)
+    for i in range(0, 2):
+        click(1515,70)
+        time.sleep(2)
 
-#     while True:
+    while keyboard.is_pressed('q') == False:
+        funcionario = locateCenterOnScreen('checking_officer.png', confidence=0.8)
+        screen = locateCenterOnScreen('screeen_checking_officer.png')
 
-#         if locateOnScreen('dead_popup.png', confidence=0.95):
-#             click(1300,725)
-#             time.sleep(1)
-#             click(1365,605)
-#             time.sleep(1)
-#             novice_field()
+        if locateOnScreen('dead_popup.png', confidence=0.95):
+            time.sleep(0.2)
+            mouseUp()
+            click(1300,725)
+            time.sleep(0.5)
+            click(1365,605)
+            time.sleep(0.5)
+            novice_field()
 
+        if funcionario != None:
+            time.sleep(0.2)
+            mouseUp()
+            click(funcionario.x, funcionario.y)
 
-#         posi_check = locateOnScreen('funcionario_de_checagem.png', confidence=0.8)
+            if screen != None:
+                break
 
-#         if posi_check != None:
-#             print('achou')
-#             func_checagem = center(posi_check)
-#             #time.sleep(1.5)
-#             click(func_checagem.x, func_checagem.y)
-#             #time.sleep(1)
-
-#             for k in range(0, 3):
-#                 press('enter')
-#                 time.sleep(0.2)
-#                 print('terminou de falar')
-#                 break
-        
-#         elif locateOnScreen('pilar.png', confidence=0.95) != None:
-#             print('achou o pilar')
-#             break
-
-#         else:
-#             print('Nao achou')
-#             click(1290,80)
+        else:
+            moveTo(1290,80)
+            time.sleep(0.2)
+            mouseDown()
+    
+    for k in range(0, 3):
+        press('enter')
+        time.sleep(0.3)
+    time.sleep(2)
 
 # def instrutor_de_aprendizes():
 
