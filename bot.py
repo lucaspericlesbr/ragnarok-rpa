@@ -313,25 +313,44 @@ def novice_field():
         time.sleep(0.3)
     time.sleep(2)
 
-# def instrutor_de_aprendizes():
+def novice_instructor():
 
-#     time.sleep(5)
+    mouseUp()
+    time.sleep(1)
 
-#     click(905,300)
-#     time.sleep(2)
-#     click(1290,350)
+    while keyboard.is_pressed('q') == False:
+        landmark = locateCenterOnScreen('pillar.png', confidence=0.80)
 
-#     for i in range(0, 12):
-#         press('enter')
-#         time.sleep(0.5)
-    
-#     for k in range(0, 6):
-#         press('down')
-    
-#     press('enter')
-#     time.sleep(0.5)
-#     press('enter')
-#     time.sleep(0.5)
+        if landmark != None:
+            moveTo(landmark.x+100, landmark.y-50)
+            click(landmark.x+100, landmark.y-50)
+            break
+            
+        else:
+            continue
+    time.sleep(2)
+
+    while keyboard.is_pressed('q') == False:
+        instrutor = locateCenterOnScreen('novice_instructor.png', confidence=0.60)
+
+        if instrutor != None:
+            moveTo(instrutor)
+            click(instrutor.x, instrutor.y)
+            break
+            
+        else:
+            continue
+
+    for i in range(0, 12):
+        press('enter')
+        time.sleep(0.5)
+
+    for k in range(0, 6):
+        press('down')    
+
+    for j in range(0, 2):
+        press('enter')
+        time.sleep(0.5)
 
 # def instrutor_final():
 #     time.sleep(2)
