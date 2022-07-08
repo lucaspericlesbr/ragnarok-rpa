@@ -352,13 +352,88 @@ def novice_instructor():
         press('enter')
         time.sleep(0.5)
 
-# def instrutor_final():
-#     time.sleep(2)
-#     click(1710,100)
+def final_instructor():
+    
+    while keyboard.is_pressed('q') == False:
+        instrutor = locateCenterOnScreen('final_instructor.png', confidence=0.80)
 
-#     for i in range(0, 67):
-#         press('enter')
-#         time.sleep(0.5)
+        if instrutor != None:
+            moveTo(instrutor)
+            click(instrutor.x, instrutor.y)
+            break
+            
+        else:
+            continue
+    
+    # MARCANDO OPÇÕES
+    for i in range(0, 12):
+        press('enter')
+        time.sleep(0.5)
+
+    press('down')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+
+    for k in range(0, 18):
+        press('enter')
+        time.sleep(0.5)
+
+    press('down')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+
+    for p in range(0, 6):
+        press('enter')
+        time.sleep(0.5)
+
+    press('down')
+    time.sleep(0.5)
+
+    for h in range(0, 17):
+        press('enter')
+        time.sleep(0.5)
 
 # def get_out():
 #     time.sleep(2)
