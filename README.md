@@ -101,7 +101,7 @@ The following tools were used in building the project:
 - [x] Last Room
   - [x] Ninth NPC Dialogue
   - [x] Tenth NPC Dialogue
-- [ ] SkillTree
+- [x] SkillTree
 - [ ] Teleport to the Storage NPC
 - [ ] Storage NPC Dialogue
 - [ ] Pass Itens to the Storage
