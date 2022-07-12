@@ -435,25 +435,51 @@ def final_instructor():
         press('enter')
         time.sleep(0.5)
 
-# def get_out():
-#     time.sleep(2)
-#     click(1740,900)
-#     time.sleep(2)
-#     click(1500,810)
-#     time.sleep(2)
-#     click(1950,550)
-#     time.sleep(2.5)
-#     click(1900,560)
-#     time.sleep(2.5)
-#     click(1900,560)
-#     time.sleep(2.5)
-#     click(1900,560)
-#     time.sleep(2)
-#     click(1795,560)
-#     time.sleep(2)
-#     click(1290,1030)
-#     time.sleep(2)
-#     click(1705,680)
+def skillpoint():
+
+    while keyboard.is_pressed('q') == False:
+        skill = locateCenterOnScreen('skillpoint.png')
+
+        if skill != None:
+            moveTo(skill)
+            break                
+            
+        else:
+            keyDown('alt')
+            time.sleep(0.5)
+            press('s')
+            keyUp('alt')
+
+    for i in range(0, 6):
+        click(skill.x, skill.y)
+        time.sleep(0.2)
+
+    while keyboard.is_pressed('q') == False:
+        apply = locateCenterOnScreen('apply_skill.png')
+
+        if apply != None:
+            moveTo(apply)
+            click(apply.x, apply.y)
+            break                
+            
+        else:
+            continue
+        
+    while keyboard.is_pressed('q') == False:
+        ok = locateCenterOnScreen('ok_button.png')
+
+        if ok != None:
+            moveTo(ok)
+            click(ok.x, ok.y)
+            break                
+            
+        else:
+            continue
+        
+    keyDown('alt')
+    time.sleep(0.5)
+    press('s')
+    keyUp('alt')
 
 # def skillpoint():
 #     time.sleep(2)
