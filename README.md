@@ -102,7 +102,7 @@ The following tools were used in building the project:
   - [x] Ninth NPC Dialogue
   - [x] Tenth NPC Dialogue
 - [x] SkillTree
-- [ ] Teleport to the Storage NPC
+- [x] Teleport to the Storage NPC
 - [ ] Storage NPC Dialogue
 - [ ] Pass Itens to the Storage
 - [ ] LogOut
