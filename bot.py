@@ -481,24 +481,43 @@ def skillpoint():
     press('s')
     keyUp('alt')
 
-# def skillpoint():
-#     time.sleep(2)
-#     keyDown('alt')
-#     time.sleep(1)
-#     press('s')
+def teleport():
+    # ACHAR E CLICAR NA ABA DE ITEMS C
+    while keyboard.is_pressed('q') == False:
+        landmark_C = locateCenterOnScreen('landmark_inventory_C.png', confidence=0.90)
 
-#     for i in range(0, 6):
-#         moveTo(768,257)
-#         mouseDown(); mouseUp()  
+        if landmark_C != None:
+            moveTo(landmark_C)
+            DoubleClick(landmark_C.x, landmark_C.y)
+            break                
+            
+        else:
+            keyDown('alt')
+            time.sleep(0.5)
+            press('e')
+            keyUp('alt')
+            time.sleep(0.5)
 
-#     keyUp('alt')
-#     time.sleep(1)
-#     click(1160,590)
-#     time.sleep(1)
-#     click(1363,605)
+    # ACHAR E CLICAR NA ASALA DE BORBOLETA
+    while keyboard.is_pressed('q') == False:
+        wing = locateCenterOnScreen('butterfly_wing.png')
 
-#     time.sleep(1)
-#     click(1230,216)
+        if wing != None:
+            moveTo(wing)
+            DoubleClick(wing.x, wing.y)
+            break                
+            
+        else:
+            keyDown('alt')
+            time.sleep(0.5)
+            press('e')
+            keyUp('alt')
+            time.sleep(0.5)
+
+    keyDown('alt')
+    time.sleep(0.5)
+    press('e')
+    keyUp('alt')
 
 # def last_kafra():
 #     time.sleep(1)
