@@ -519,17 +519,28 @@ def teleport():
     press('e')
     keyUp('alt')
 
-# def last_kafra():
-#     time.sleep(1)
-#     click(1700,470)
-#     time.sleep(0.5)
-#     press('enter')
-#     time.sleep(0.5)
-#     press('down')
-#     time.sleep(0.5)
-#     press('enter')
-#     time.sleep(0.5)
-#     press('enter')
+def last_kafra():
+
+    while keyboard.is_pressed('q') == False:
+        kafra = locateCenterOnScreen('last_kafra.png', confidence=0.80)
+
+        if kafra != None:
+            moveTo(kafra)
+            click(kafra.x, kafra.y)
+            break                
+            
+        else:
+            continue
+
+    time.sleep(1)
+    press('enter')
+    time.sleep(0.5)
+    press('down')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
+    press('enter')
+    time.sleep(0.5)
 
 # def pass_itens():
 
