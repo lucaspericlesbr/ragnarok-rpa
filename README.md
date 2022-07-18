@@ -105,7 +105,7 @@ The following tools were used in building the project:
 - [x] Teleport to the Storage NPC
 - [x] Storage NPC Dialogue
 - [x] Pass Itens to the Storage
-- [ ] LogOut
+- [x] LogOut
 - [ ] Delete Character  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
