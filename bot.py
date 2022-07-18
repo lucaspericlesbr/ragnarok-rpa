@@ -542,51 +542,84 @@ def last_kafra():
     press('enter')
     time.sleep(0.5)
 
-# def pass_itens():
+def pass_itens():
+    # ACHAR E CLICAR NA ABA DE ITEMS C
+    while keyboard.is_pressed('q') == False:
+        landmark_C = locateCenterOnScreen('landmark_inventory_C.png', confidence=0.90)
 
-#     time.sleep(2)
-#     keyDown('alt')
-#     time.sleep(1)
-#     press('e')
-#     time.sleep(1)
-#     keyUp('alt')
+        if landmark_C != None:
+            moveTo(landmark_C)
+            DoubleClick(landmark_C.x, landmark_C.y)
+            break                
+            
+        else:
+            keyDown('alt')
+            time.sleep(0.5)
+            press('e')
+            keyUp('alt')
+            time.sleep(0.5)
 
-#     time.sleep(1)
-#     moveTo(1427,516)
-#     click(1427,516)
+    # ACHAR ITEMS_C E PASSAR PARA O ARMAZEM
+    while keyboard.is_pressed('q') == False:
+        all_C = locateCenterOnScreen('all_items_C.png', confidence=0.80)
 
-#     time.sleep(1)
-#     moveTo(1503,520)
+        if all_C != None:
+            moveTo(all_C.x-80, all_C.y)
+            break                
+            
+        else:
+            keyDown('alt')
+            time.sleep(0.5)
+            press('e')
+            keyUp('alt')
+            time.sleep(0.5)
 
-#     keyDown('alt')
+    keyDown('alt')
+    for i in range(0, 6):
+        win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN,0,0)
+        time.sleep(0.2)
+        win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP,0,0)
+        time.sleep(0.5)
+    keyUp('alt')
 
-#     for i in range(0, 6):
-#         win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN,0,0)
-#         time.sleep(0.2)
-#         win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP,0,0)
-#         time.sleep(0.5)
-#     keyUp('alt')
+    # ACHAR E CLICAR NA ABA DE ITEMS I
+    while keyboard.is_pressed('q') == False:
+        landmark_I = locateCenterOnScreen('landmark_inventory_I.png', confidence=0.90)
 
-#     time.sleep(1)
-#     click(1425,560)
+        if landmark_I != None:
+            moveTo(landmark_I)
+            DoubleClick(landmark_I.x, landmark_I.y)
+            break                
+            
+        else:
+            keyDown('alt')
+            time.sleep(0.5)
+            press('e')
+            keyUp('alt')
+            time.sleep(0.5)
 
-#     time.sleep(1)
-#     moveTo(1535,520)
-#     time.sleep(0.5)
-#     keyDown('alt')
-#     time.sleep(1)
-#     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN,0,0)
-#     time.sleep(0.2)
-#     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP,0,0)
-#     time.sleep(0.5)
-#     keyUp('alt')
-#     time.sleep(1)
-#     keyDown('alt')
-#     press('e')
-#     keyUp('alt')
+    # ACHAR ITEMS_I E PASSAR PARA O ARMAZEM
+    while keyboard.is_pressed('q') == False:
+        all_I = locateCenterOnScreen('all_items_I.png', confidence=0.80)
 
-#     time.sleep(1)
-#     click(1311,942)
+        if all_I != None:
+            moveTo(all_C.x-20, all_C.y)
+            break                
+            
+        else:
+            keyDown('alt')
+            time.sleep(0.5)
+            press('e')
+            keyUp('alt')
+            time.sleep(0.5)
+
+    keyDown('alt')
+    for i in range(0, 1):
+        win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN,0,0)
+        time.sleep(0.2)
+        win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP,0,0)
+        time.sleep(0.5)
+    keyUp('alt')
 
 # def deslogar():
 
