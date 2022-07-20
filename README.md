@@ -106,7 +106,7 @@ The following tools were used in building the project:
 - [x] Storage NPC Dialogue
 - [x] Pass Itens to the Storage
 - [x] LogOut
-- [ ] Delete Character  
+- [x] Delete Character  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
