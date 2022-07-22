@@ -621,7 +621,7 @@ def pass_itens():
 def logout():
 
     while keyboard.is_pressed('q') == False:
-        config = locateCenterOnScreen('janela_de_configuracoes.png', confidence=0.90)
+        config = locateCenterOnScreen('screen_configuration.png', confidence=0.90)
 
         if config != None:
             break                
