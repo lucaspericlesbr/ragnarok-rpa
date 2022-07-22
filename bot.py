@@ -543,7 +543,7 @@ def last_kafra():
     time.sleep(0.5)
 
 def pass_itens():
-    # ACHAR E CLICAR NA ABA DE ITEMS C
+
     while keyboard.is_pressed('q') == False:
         landmark_C = locateCenterOnScreen('landmark_inventory_C.png', confidence=0.90)
 
@@ -559,7 +559,6 @@ def pass_itens():
             keyUp('alt')
             time.sleep(0.5)
 
-    # ACHAR ITEMS_C E PASSAR PARA O ARMAZEM
     while keyboard.is_pressed('q') == False:
         all_C = locateCenterOnScreen('all_items_C.png', confidence=0.80)
 
@@ -582,7 +581,6 @@ def pass_itens():
         time.sleep(0.5)
     keyUp('alt')
 
-    # ACHAR E CLICAR NA ABA DE ITEMS I
     while keyboard.is_pressed('q') == False:
         landmark_I = locateCenterOnScreen('landmark_inventory_I.png', confidence=0.90)
 
@@ -598,7 +596,6 @@ def pass_itens():
             keyUp('alt')
             time.sleep(0.5)
 
-    # ACHAR ITEMS_I E PASSAR PARA O ARMAZEM
     while keyboard.is_pressed('q') == False:
         all_I = locateCenterOnScreen('all_items_I.png', confidence=0.80)
 
@@ -621,15 +618,27 @@ def pass_itens():
         time.sleep(0.5)
     keyUp('alt')
 
-# def deslogar():
+def logout():
 
-#     while True:
-#         press('esc')
-#         time.sleep(1)
+    while keyboard.is_pressed('q') == False:
+        config = locateCenterOnScreen('janela_de_configuracoes.png', confidence=0.90)
 
-#         if locateOnScreen('janela_de_configuracoes.png', confidence=0.95) != None:
-#             click(1300,725)
-#             break
+        if config != None:
+            break                
+            
+        else:
+            press('esc')
+
+    while keyboard.is_pressed('q') == False:
+        logout = locateCenterOnScreen('character_select.png',)
+
+        if logout != None:
+            moveTo(logout)
+            click(logout.x, logout.y)
+            break                
+            
+        else:
+            press('esc')
 
 # def delete_character():
 #     time.sleep(3)
