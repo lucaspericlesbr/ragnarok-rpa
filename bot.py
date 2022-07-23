@@ -640,66 +640,50 @@ def logout():
         else:
             press('esc')
 
-# def delete_character():
-#     time.sleep(3)
+def delete_character():
 
-#     #if locateOnScreen('delete_character.png', confidence=0.95) != None:
-#     click(1670,510)
+    # EXCLUIR PERSONAGEM
+    while keyboard.is_pressed('q') == False:
+        delete = locateCenterOnScreen('delete_character.png', confidence=0.80)
 
-#     time.sleep(2)
-
-#     #if locateOnScreen('delete_option.png', confidence=0.95) != None:
-#     click(1670,535)
-#     time.sleep(2)
-#     click(1360,605)
-
-#     keyDown('ctrl')
-#     time.sleep(1)
-#     press('v')
-#     time.sleep(1)
-#     keyUp('ctrl')
-#     click(1395,530)
-    
-
+        if delete != None:
+            moveTo(delete)
+            click(delete.x, delete.y)
+            break                
             
-# while True:
-#     create_char()
-#     time.sleep(2)
-#     close_window_daily()
-#     kafra_initial()
-#     time.sleep(2)
-#     rotate_screen()
-#     walking_to_the_castle()
-#     time.sleep(2)
-#     second_npc()
-#     time.sleep(2)
-#     third_npc()
-#     time.sleep(2)
-#     fourth_npc()
-#     time.sleep(2)
-#     walking_fifth_npc()
-#     time.sleep(2)
-#     fifth_npc()
-#     time.sleep(2)
-#     sixth_npc()
-#     time.sleep(2)
-#     seventh_npc()
-#     time.sleep(2)
-#     novice_field()
-#     time.sleep(2)
-#     instrutor_de_aprendizes()
-#     time.sleep(2)
-#     instrutor_final()
-#     time.sleep(2)
-#     get_out()
-#     time.sleep(2)
-#     skillpoint()
-#     time.sleep(2)
-#     last_kafra()
-#     time.sleep(2)
-#     pass_itens()
-#     time.sleep(2)
-#     deslogar()
-#     time.sleep(2)
-#     delete_character()
-#     time;sleep(5)
+        else:
+            continue
+
+    # EXCLUIR
+    while keyboard.is_pressed('q') == False:
+        exclusion = locateCenterOnScreen('delete_option.png', confidence=0.70)
+
+        if exclusion != None:
+            moveTo(exclusion)
+            click(exclusion.x, exclusion.y)
+            break                
+            
+        else:
+            continue
+
+    # OK
+    while keyboard.is_pressed('q') == False:
+        ok = locateCenterOnScreen('ok_button.png', confidence=0.80)
+
+        if ok != None:
+            moveTo(ok)
+            click(ok.x, ok.y)
+            break                
+            
+        else:
+            continue
+
+    keyDown('ctrl')
+    time.sleep(1)
+    press('v')
+    time.sleep(1)
+    keyUp('ctrl')
+
+    time.sleep(1)
+    press('enter')
+    
